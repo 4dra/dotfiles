@@ -1,14 +1,11 @@
 [colors]
 background = #D9333438
-background-alt = #D9333438
-
 border-color = #333438
 
 foreground = #e6e6e6
 foreground-alt = #e6e6e6
 foreground-dim = #6a6b6d
 
-primary = #ec4b06
 alert = #ec4b06
 
 high = #4471a3
@@ -21,7 +18,7 @@ height = 23
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-underline-size = 2
+underline-size = 1
 underline-color = ${colors.high}
 
 padding-left = 0
@@ -30,24 +27,26 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = Monospace:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=10;1
+font-0 = Monospace:pixelsize=10;2
+font-1 = FontAwesome:pixelsize=10;2
+font-2 = Monospace:pixelsize=9;2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = up-speed down-speed memory cpu drive volume date
+modules-right = volume date
 
 tray-position = right
 tray-padding = 1
 tray-background = ${colors.background}
 
-border-top-size = 2
+border-top-size = 1
 border-top-color = ${colors.border-color}
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:120:...%
 label-padding = 2
+label-font = 3
 
 [module/i3]
 type = internal/i3
@@ -62,7 +61,7 @@ ws-icon-default = 
 
 format = <label-state> <label-mode>
 
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background}
 label-focused-underline = ${colors.high}
 label-focused-padding = 2
 
@@ -136,7 +135,7 @@ inherit = module/theme
 type = internal/date
 interval = 60
 
-time-alt = "%d.%m.%Y %H:%M"
+time-alt = "%d.%m.%Y"
 time = "%H:%M"
 
 label = %date% %time%
@@ -148,7 +147,7 @@ type = internal/volume
 label-volume = %percentage%%
 format-volume = <ramp-volume> <label-volume>
 
-label-muted =  muted
+label-muted = 
 format-muted-underline = ${colors.alert}
 format-muted = <label-muted>
 

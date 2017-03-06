@@ -176,10 +176,16 @@ bindsym $mod+r mode "resize"
 # CUSTOM
 
 # color vars (murakami palette http://www.color-hex.com/color-palette/32129)
+ 	#35c9c2 	(53,201,194)
+	#ec4b06 	(236,75,6)
+	#4471a3 	(68,113,163)
+	#6a6b6d 	(106,107,109)
+	#333438 	(51,52,56)
+
 set $bg-color            	#333438
 set $bg-color-2                 #6a6b6d
-set $focused-border-color	#4471a3 #35c9c2
-set $unfocused-border-color	#333438 #4471a3
+set $focused-border-color	#4471a3
+set $unfocused-border-color	#333438
 set $urgent-color               #ec4b06
 
 set $text-color          	#e6e6e6
@@ -188,12 +194,12 @@ set $text-color          	#e6e6e6
 client.focused          	$bg-color	$bg-color	$text-color	$urgent-color	$focused-border-color
 client.focused_inactive        	$bg-color	$bg-color 	$text-color	$urgent-color	$unfocused-border-color
 client.unfocused        	$bg-color	$bg-color 	$text-color	$urgent-color	$unfocused-border-color
-client.urgent           	$urgent-color	$urgent-color 	$text-color	$urgent-color	$urgent-color
+client.urgent           	$bg-color	$bg-color 	$text-color	$urgent-color	$urgent-color
 
 client.background       $bg-color
 
 # window border
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
 # gaps
 gaps inner 30
@@ -211,8 +217,6 @@ bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 # alsa
 bindsym $mod+Next exec amixer set Master -q 5%-
 bindsym $mod+Prior exec amixer set Master -q 5%+
-
-
 
 # background
 exec_always --no-startup-id feh --bg-fill ~/Images/papes/wallpaper.jpg
