@@ -128,13 +128,9 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-
-# bindsym $mod+Shift+1 move container to workspace $ws1
-# bindsym $mod+Shift+2 move container to workspace $ws2
-# bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
 
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
@@ -177,23 +173,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#        status_command i3status
-#}
-
-#######################################################################
-# automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used their favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.i3/config.
-#
-# Please remove the following exec line:
-#######################################################################
-exec i3-config-wizard
-
 # CUSTOM
 
 # color vars (murakami palette http://www.color-hex.com/color-palette/32129)
@@ -216,22 +195,6 @@ client.background       $bg-color
 # window border
 for_window [class="^.*"] border pixel 2
 
-# bar
-# bar {
-# 	colors {
-# 		background $bg-color
-#                 statusline $text-color
-#                 separator $bg-color-2
-
-#                 #                       border          background      text
-#                 focused_workspace       $bg-color       $bg-color       $text-color
-#                 inactive_workspace      $bg-color       $bg-color       $bg-color-2
-#                 urgent_workspace        $bg-color       $bg-color       $urgent-color
-# 	}
-
-# 	status_command i3status
-# }
-
 # gaps
 gaps inner 30
 gaps outer 15
@@ -245,9 +208,11 @@ bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
 bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
 bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 
-# pulseaudio
-# bindsym $mod+Next exec pulseaudio-ctl down
-# bindsym $mod+Prior exec pulseaudio-ctl up
+# alsa
+bindsym $mod+Next exec amixer set Master -q 5%-
+bindsym $mod+Prior exec amixer set Master -q 5%+
+
+
 
 # background
 exec_always --no-startup-id feh --bg-fill ~/Images/papes/wallpaper.jpg

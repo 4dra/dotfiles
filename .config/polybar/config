@@ -146,7 +146,7 @@ inherit = module/theme
 type = internal/volume
 
 label-volume = %percentage%%
-format-volume = <ramp-volume><label-volume>
+format-volume = <ramp-volume> <label-volume>
 
 label-muted =  muted
 format-muted-underline = ${colors.alert}

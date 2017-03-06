@@ -11,7 +11,6 @@ ensure_file . .vimrc
 ensure_file . .xinitrc
 
 ensure_file .config/i3 config
-ensure_file .config/i3status config
 ensure_file .config/rofi config
 ensure_file .config/termite config
 ensure_file .config/polybar config
