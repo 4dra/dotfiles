@@ -6,7 +6,7 @@ rofi.eh: 2
 rofi.lines: 5
 rofi.bw: 0
 
-rofi.color-window: argb:ea333438, argb:00000000, argb:00000000
-rofi.color-normal: argb:00000000, #e6e6e6, argb:00000000, #e6e6e6, #333438
-rofi.color-active: argb:00000000, #e6e6e6, argb:00000000, #e6e6e6, #333438
-rofi.color-urgent: argb:00000000, #e6e6e6, argb:00000000, #e6e6e6, #333438
+rofi.color-window: argb:d9333438, argb:0000000, argb:0000000
+rofi.color-normal: argb:0000000, #e6e6e6, argb:0000000, #e6e6e6, #333438
+rofi.color-active: argb:0000000, #4471a3, argb:0000000, #4471a3, #333438
+rofi.color-urgent: argb:0000000, #ec4b06, argb:0000000, #ec4b06, #333438
