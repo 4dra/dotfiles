@@ -112,6 +112,7 @@ set $ws3 "3:term"
 
 assign [class="Firefox"] $ws1
 assign [class="Code"] $ws2
+assign [class="jetbrains-phpstorm"] $ws2
 assign [class="Termite"] $ws3
 
 # switch to workspace

@@ -33,7 +33,7 @@ font-2 = Monospace:pixelsize=9;2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume date
+modules-right = cpu memory drive volume date
 
 tray-position = right
 tray-padding = 1
