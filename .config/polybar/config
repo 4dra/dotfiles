@@ -1,5 +1,5 @@
 [colors]
-background = #D9333438
+background = #B3333438
 border-color = #333438
 
 foreground = #e6e6e6
@@ -27,9 +27,9 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = Monospace:pixelsize=10;2
-font-1 = FontAwesome:pixelsize=10;2
-font-2 = Monospace:pixelsize=9;2
+font-0 = Monospace:pixelsize=10;1.5
+font-1 = FontAwesome:pixelsize=10;1.5
+font-2 = Monospace:pixelsize=9;1.5
 
 modules-left = i3
 modules-center = xwindow
