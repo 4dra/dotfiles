@@ -1,5 +1,5 @@
 [colors]
-background = #B3333438
+background = #E6333438
 border-color = #333438
 
 foreground = #e6e6e6
@@ -27,13 +27,13 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = Monospace:pixelsize=10;1.5
-font-1 = FontAwesome:pixelsize=10;1.5
-font-2 = Monospace:pixelsize=9;1.5
+font-0 = Fira Mono:pixelsize=10;2
+font-1 = FontAwesome:pixelsize=10;2
+font-2 = Fira Mono:pixelsize=9;2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = cpu memory drive volume date
+modules-right = network-up network-down cpu memory drive volume date
 
 tray-position = right
 tray-padding = 1
@@ -45,8 +45,8 @@ border-top-color = ${colors.border-color}
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:120:...%
-label-padding = 2
-label-font = 3
+label-padding = 1
+label-font = 4
 
 [module/i3]
 type = internal/i3
@@ -55,43 +55,52 @@ enable-scroll = false
 strip-wsnumbers = true
 
 ws-icon-0 = 1:web;
-ws-icon-1 = 2:code;
-ws-icon-2 = 3:term;
+ws-icon-1 = 2:term;
+ws-icon-2 = 3:code;
+#ws-icon-3 = 4:chat;
+#ws-icon-4 = 10:cmus;
 ws-icon-default = 
 
 format = <label-state> <label-mode>
 
 label-focused-background = ${colors.background}
 label-focused-underline = ${colors.high}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-unfocused-foreground = ${colors.foreground-dim}
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 
-label-urgent-padding = 2
+label-urgent-padding = 1
 label-urgent-foreground = ${colors.alert}
 
 label-visible-foreground = ${colors.foreground-alt}
-label-visible-padding = 2
+label-visible-padding = 1
+
+[module/sep]
+type = custom/text
+content = |
+content-foreground = ${colors.background}
+content-background = ${colors.background}
 
 [module/theme]
 format-background = ${colors.background}
 
-format-padding = 2
+format-padding = 1
 format-underline = ${colors.high}
 
-format-mounted-padding = 2
+format-mounted-padding = 1
 format-mounted-underline = ${colors.high}
 
-format-volume-padding = 2
+format-volume-padding = 1
 format-volume-underline = ${colors.high}
 
-format-muted-padding = 2
-format-muted-underline = ${colors.high}
+format-muted-padding = 1
+format-muted-underline = ${colors.alert}
 
-[module/network]
+[module/wired-network]
+inherit = module/theme
 type = internal/network
-interface = wlp4s0
+interface = enp2s0
 ping-interval = 3
 
 format-connected-padding = 1
@@ -99,17 +108,21 @@ label-connected-padding-left = 1
 
 accumulate-stats = true
 
-[module/up-speed]
-inherit = module/network
+[module/network-down]
+inherit = module/wired-network
 
-format-connected-prefix = ""
-label-connected = %upspeed%
+label-connected =  %downspeed% 
 
-[module/down-speed]
-inherit = module/network
+format-connected-padding = 1
+format-connected-underline = ${colors.high}
 
-format-connected-prefix = ""
-label-connected = %downspeed%
+[module/network-up]
+inherit = module/wired-network
+
+label-connected =  %upspeed% 
+
+format-connected-padding = 1
+format-connected-underline = ${colors.high}
 
 [module/drive]
 inherit = module/theme
@@ -148,7 +161,6 @@ label-volume = %percentage%%
 format-volume = <ramp-volume> <label-volume>
 
 label-muted = 
-format-muted-underline = ${colors.alert}
 format-muted = <label-muted>
 
 ramp-volume-0 = 

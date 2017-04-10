@@ -1,10 +1,16 @@
 #!/bin/bash
 
 function ensure_file() {
-    echo "dir: " $1 " file:" $2
-    mkdir -p ~/$1;
-    rm ~/$1/$2;
-    ln -s ~/dotfiles/$1/$2 ~/$1/$2;
+    echo $1 $2
+
+    echo "mkdir -p" $HOME/$1;
+    mkdir -p $HOME/$1;
+
+    echo "rm" $HOME/$1/$2;
+    rm $HOME/$1/$2;
+
+    echo "ln -s" $PWD/$1/$2 $HOME/$1/$2;
+    ln -s $PWD/$1/$2 $HOME/$1/$2;
 }
 
 ensure_file . .vimrc
