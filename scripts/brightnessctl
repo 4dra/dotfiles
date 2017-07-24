@@ -1,0 +1,23 @@
+#! /bin/bash
+
+currentLevel=$(cat /sys/class/backlight/intel_backlight/brightness)
+
+if [ $# -eq 0 ]; then
+	echo $currentLevel
+	exit
+fi
+
+maxLevel=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+
+if [ "${1:0:1}" = "+" ] || [ "${1:0:1}" = "-" ]; then
+	newLevel=$(($currentLevel+$1))
+else
+	newLevel=$1
+fi
+	
+if [ "$newLevel" -ge 10 ] && [ "$newLevel" -le "$maxLevel" ]; then	
+	echo $newLevel > /sys/class/backlight/intel_backlight/brightness
+	echo $newLevel
+else
+	echo min 10, max $maxLevel
+fi
