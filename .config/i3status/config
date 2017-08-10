@@ -33,7 +33,7 @@ ethernet _first_ {
 }
 
 battery all {
-	format = "%percentage"
+	format = "%status:%percentage"
         #format = "%status %percentage %remaining"
 }
 

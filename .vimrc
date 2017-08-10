@@ -1,18 +1,15 @@
+set enc=utf-8
+set fenc=utf-8
+set termencoding=utf-8
 set nocompatible
-filetype off
-
-set ai
-set et
-set sw=2
-set sts=2
-set smarttab
-set number
-set mouse=a
-set exrc
-set secure
+set autoindent
+set smartindent
 set tabstop=4
-set softtabstop=4
 set shiftwidth=4
-set noexpandtab
-
+set expandtab
+set textwidth=120
+set t_Co=256
 syntax on
+set number
+set showmatch
+set comments=sl:/*,mb:\ *,elx:\ */
