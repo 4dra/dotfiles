@@ -7,6 +7,8 @@ URxvt.boldItalicFont: xft:Noto Mono:size=11,style=bold
 
 URxvt.scrollBar: false
 
+URxvt.internalBorder: 8
+
 ! special
 *.foreground:   #464b50
 *.background:   #ffffff
@@ -43,4 +45,3 @@ URxvt.scrollBar: false
 ! white
 *.color7:       #a7a7a7
 *.color15:      #ffffff
-

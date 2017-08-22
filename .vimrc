@@ -7,8 +7,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set textwidth=120
-set t_Co=256
+set mouse=a
 syntax on
 set number
 set showmatch
