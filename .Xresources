@@ -45,3 +45,12 @@ URxvt.internalBorder: 8
 ! white
 *.color7:       #a7a7a7
 *.color15:      #ffffff
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #f3f4f5, #1c2023, #1c2023
+rofi.color-normal: #f3f4f5, #1c2023, #f3f4f5, #95aec7, #1c2023
+rofi.color-active: #f3f4f5, #aec795, #f3f4f5, #aec795, #1c2023
+rofi.color-urgent: #f3f4f5, #c795ae, #f3f4f5, #c795ae, #1c2023
